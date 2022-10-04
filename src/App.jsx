@@ -1,5 +1,7 @@
+import Routs from "./routes";
+
 function App() {
-  return <div className="App">teste</div>;
+  return <Routs />;
 }
 
 export default App;
