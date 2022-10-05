@@ -1,11 +1,21 @@
+import ButtonNav from "../../components/ButtonNav";
 import logo from "../../img/Logo.png";
 
 const HomePage = () => {
+  function logout() {
+    console.log("saiu");
+  }
+
   return (
     <div className="homePage">
       <nav>
         <img src={logo} alt="Logo Kenzie Hub" />
-        <button>Sair</button>
+        <ButtonNav
+          content="Sair"
+          onClick={() => {
+            logout();
+          }}
+        />
       </nav>
       <header>
         <h1>Olá, Samuel Leão!</h1>

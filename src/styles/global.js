@@ -48,4 +48,8 @@ export default createGlobalStyle`
   p{
     color: var(--gray-0);
   }
+
+  button{
+    cursor: pointer;
+  }
 `;
