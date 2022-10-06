@@ -1,5 +1,6 @@
 import ButtonNav from "../../components/ButtonNav";
 import logo from "../../img/Logo.png";
+import { HomePageStyled } from "./style";
 
 const HomePage = () => {
   function logout() {
@@ -7,7 +8,7 @@ const HomePage = () => {
   }
 
   return (
-    <div className="homePage">
+    <HomePageStyled>
       <nav>
         <img src={logo} alt="Logo Kenzie Hub" />
         <ButtonNav
@@ -27,7 +28,7 @@ const HomePage = () => {
           Nossa aplicação está em desenvolvimento, em breve teremos novidades
         </p>
       </main>
-    </div>
+    </HomePageStyled>
   );
 };
 
