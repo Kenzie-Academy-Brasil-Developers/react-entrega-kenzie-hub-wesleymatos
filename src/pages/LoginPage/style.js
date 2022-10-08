@@ -20,7 +20,7 @@ export const LoginPageStyled = styled.main`
     flex-direction: column;
     align-items: center;
     width: 296px;
-    height: 405px;
+    min-height: 405px;
     padding: 0 17px;
     background-color: var(--gray-3);
     box-shadow: 0px 3.20867px 32.0867px -8.02168px rgba(0, 0, 0, 0.25);
@@ -127,7 +127,7 @@ export const LoginPageStyled = styled.main`
 
     form {
       width: 369px;
-      height: 502px;
+      min-height: 502px;
 
       h1 {
         margin: 42px 0 28px 0;

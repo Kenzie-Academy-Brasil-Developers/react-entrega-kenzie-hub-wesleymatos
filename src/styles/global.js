@@ -32,6 +32,8 @@ export default createGlobalStyle`
 
     background-color: var(--background);
 
+    overflow-x: hidden;
+
   }
 
   h1, h2, h3, h4, h5, h6{
@@ -50,7 +52,7 @@ export default createGlobalStyle`
     color: var(--gray-0);
   }
 
-  button{
+  button, select, option{
     font-family: 'Inter', sans-serif;
     cursor: pointer;
   }
