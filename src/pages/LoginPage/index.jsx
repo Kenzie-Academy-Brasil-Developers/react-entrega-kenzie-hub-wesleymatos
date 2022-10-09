@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup.object({
   email: yup
@@ -23,6 +24,7 @@ const schema = yup.object({
 
 const LoginPage = () => {
   const [viewPassword, setViewPassword] = useState("password");
+  const navigate = useNavigate();
 
   const {
     register,
@@ -73,7 +75,14 @@ const LoginPage = () => {
         <p className="error">{errors.password?.message}</p>
         <button type="submit">Entrar</button>
         <p>Ainda não possui uma conta?</p>
-        <div className="divButton">Cadastre-se</div>
+        <div
+          className="divButton"
+          onClick={() => {
+            navigate("/register");
+          }}
+        >
+          Cadastre-se
+        </div>
       </form>
     </LoginPageStyled>
   );
