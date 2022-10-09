@@ -6,7 +6,13 @@ export const LoginPageStyled = styled.main`
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+
+  .error {
+    color: var(--color-primary);
+    margin-top: 5px;
+    text-align: center;
+  }
 
   img {
     width: 101px;
@@ -49,17 +55,22 @@ export const LoginPageStyled = styled.main`
       width: 264.66px;
       height: 38.5px;
       padding: 0 33px 0 13px;
-      margin-bottom: 18px;
       font-weight: 400;
       font-size: 13.0293px;
       line-height: 21px;
     }
 
+    .divIcon {
+      position: relative;
+      width: 264.66px;
+      height: 38.5px;
+    }
+
     span {
       position: absolute;
       cursor: pointer;
-      top: 183px;
-      right: 30px;
+      top: 10px;
+      right: 15px;
       width: 11px;
       height: 17px;
     }
@@ -95,7 +106,7 @@ export const LoginPageStyled = styled.main`
       margin-bottom: 18px;
     }
 
-    div {
+    .divButton {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -110,6 +121,7 @@ export const LoginPageStyled = styled.main`
       font-weight: 500;
       font-size: 12.8347px;
       line-height: 21px;
+      margin-bottom: 10px;
 
       &:hover {
         border-color: var(--gray-2);
@@ -146,14 +158,18 @@ export const LoginPageStyled = styled.main`
         padding: 0 36px 0 16px;
         font-size: 16.2426px;
         line-height: 26px;
-        margin-bottom: 22px;
+      }
+
+      .divIcon {
+        width: 329.93px;
+        height: 48px;
       }
 
       span {
         width: 14px;
         height: 22px;
-        top: 228px;
-        right: 35px;
+        top: 15px;
+        right: 18px;
       }
 
       button {
@@ -170,7 +186,7 @@ export const LoginPageStyled = styled.main`
         margin-bottom: 22px;
       }
 
-      div {
+      .divButton {
         width: 324px;
         height: 48px;
         font-size: 16px;
