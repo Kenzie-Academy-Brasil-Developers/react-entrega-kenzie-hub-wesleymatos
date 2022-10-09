@@ -9,9 +9,14 @@ export const LoginPageStyled = styled.main`
   min-height: 100vh;
 
   .error {
+    text-align: center;
+    align-self: baseline;
     color: var(--color-primary);
     margin-top: 5px;
-    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
   }
 
   img {
@@ -44,6 +49,7 @@ export const LoginPageStyled = styled.main`
       font-weight: 400;
       font-size: 9.772px;
       line-height: 0px;
+      margin-top: 10px;
       margin-bottom: 18px;
     }
 
@@ -82,6 +88,7 @@ export const LoginPageStyled = styled.main`
       color: var(--gray-0);
       border: 1.2182px solid var(--color-primary);
       border-radius: 4.06066px;
+      margin-top: 18px;
       margin-bottom: 28px;
       font-weight: 500;
       font-size: 12.8347px;

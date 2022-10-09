@@ -33,6 +33,17 @@ export const RegisterPageStyled = styled.div`
     box-shadow: 0px 3.20867px 32.0867px -8.02168px rgba(0, 0, 0, 0.25);
     border-radius: 3.20867px;
 
+    .error {
+      text-align: center;
+      align-self: baseline;
+      color: var(--color-primary);
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
     h1 {
       margin: 18px 0;
       font-weight: 700;
@@ -53,6 +64,7 @@ export const RegisterPageStyled = styled.div`
       font-size: 9.772px;
       line-height: 0px;
       margin-bottom: 18px;
+      margin-top: 5px;
     }
 
     input {
@@ -63,26 +75,25 @@ export const RegisterPageStyled = styled.div`
       width: 264.66px;
       height: 38.5px;
       padding: 0 33px 0 13px;
-      margin-bottom: 18px;
       font-weight: 400;
       font-size: 13.0293px;
       line-height: 21px;
     }
 
+    .divIcon {
+      position: relative;
+      width: 264.66px;
+      height: 38.5px;
+    }
+
     .icon,
     .iconConfirm {
-      cursor: pointer;
       position: absolute;
-      margin: inherit;
-      right: 30px;
-    }
-
-    .icon {
-      top: 273px;
-    }
-
-    .iconConfirm {
-      top: 348px;
+      cursor: pointer;
+      top: 10px;
+      right: 15px;
+      width: 11px;
+      height: 17px;
     }
 
     select {
@@ -138,6 +149,11 @@ export const RegisterPageStyled = styled.div`
       width: 369px;
       margin-bottom: 10px;
 
+      .divIcon {
+        width: 329.93px;
+        height: 48px;
+      }
+
       h1 {
         font-size: 18px;
         line-height: 28px;
@@ -154,7 +170,6 @@ export const RegisterPageStyled = styled.div`
         padding: 0 36px 0 16px;
         font-size: 16.2426px;
         line-height: 26px;
-        margin-bottom: 22px;
       }
 
       select {
@@ -173,15 +188,8 @@ export const RegisterPageStyled = styled.div`
 
       .icon,
       .iconConfirm {
-        right: 35px;
-      }
-
-      .icon {
-        top: 327px;
-      }
-
-      .iconConfirm {
-        top: 417px;
+        top: 15px;
+        right: 18px;
       }
 
       select {
