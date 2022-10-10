@@ -6,6 +6,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../../services/api";
+import { toast } from "react-toastify";
 
 const schema = yup.object({
   email: yup
@@ -22,7 +24,7 @@ const schema = yup.object({
     ),
 });
 
-const LoginPage = () => {
+const LoginPage = ({ setUser }) => {
   const [viewPassword, setViewPassword] = useState("password");
   const navigate = useNavigate();
 
@@ -36,6 +38,19 @@ const LoginPage = () => {
 
   function loginUser(data) {
     console.log(data);
+    api
+      .post("/sessions", data)
+      .then((response) => {
+        setUser(response.data.user);
+        localStorage.setItem("KenzieHub@TOKEN", response.data.token);
+        localStorage.setItem("KenzieHub@USERID", response.data.user.id);
+        toast.success("Usuário logado com sucesso!");
+        navigate("/home");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Erro no login!");
+      });
   }
 
   return (

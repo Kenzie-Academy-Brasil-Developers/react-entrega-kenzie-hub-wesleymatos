@@ -4,11 +4,11 @@ import RegisterPage from "../pages/RegisterPage";
 import HomePage from "../pages/HomePage";
 import NotFoundPage from "../pages/NotFoundPage";
 
-const RoutMain = () => (
+const RoutMain = ({ setUser, user }) => (
   <Routes>
-    <Route path="/" element={<LoginPage />} />
+    <Route path="/" element={<LoginPage setUser={setUser} />} />
     <Route path="/Register/" element={<RegisterPage />} />
-    <Route path="/Home/" element={<HomePage />} />
+    <Route path="/Home/" element={<HomePage user={user} />} />
     <Route path="*" element={<NotFoundPage />} />
   </Routes>
 );
