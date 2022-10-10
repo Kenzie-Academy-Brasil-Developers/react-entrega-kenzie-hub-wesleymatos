@@ -4,10 +4,9 @@ import { LoginPageStyled } from "./style";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../../services/api";
-import { toast } from "react-toastify";
+import { UserContext } from "../../contexts/UserContext";
 
 const schema = yup.object({
   email: yup
@@ -17,7 +16,7 @@ const schema = yup.object({
   password: yup.string().required("⚠ Senha obrigatória!"),
 });
 
-const LoginPage = ({ setUser }) => {
+const LoginPage = () => {
   const [viewPassword, setViewPassword] = useState("password");
   const navigate = useNavigate();
 
@@ -29,22 +28,7 @@ const LoginPage = ({ setUser }) => {
     resolver: yupResolver(schema),
   });
 
-  function loginUser(data) {
-    console.log(data);
-    api
-      .post("/sessions", data)
-      .then((response) => {
-        setUser(response.data.user);
-        localStorage.setItem("KenzieHub@TOKEN", response.data.token);
-        localStorage.setItem("KenzieHub@USERID", response.data.user.id);
-        toast.success("Usuário logado com sucesso!");
-        navigate("/home");
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error("Erro no login!");
-      });
-  }
+  const { loginUser } = useContext(UserContext);
 
   return (
     <LoginPageStyled>

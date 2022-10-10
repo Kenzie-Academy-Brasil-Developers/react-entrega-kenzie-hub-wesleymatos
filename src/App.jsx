@@ -2,15 +2,15 @@ import Routes from "./routes";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
+import UserProvider from "./contexts/UserContext";
 
 const App = () => {
-  const [user, setUser] = useState([]);
-
   return (
     <>
-      <Routes user={user} setUser={setUser} />
       <ToastContainer />
+      <UserProvider>
+        <Routes />
+      </UserProvider>
     </>
   );
 };
