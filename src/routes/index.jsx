@@ -8,7 +8,7 @@ const RoutMain = ({ setUser, user }) => (
   <Routes>
     <Route path="/" element={<LoginPage setUser={setUser} />} />
     <Route path="/Register/" element={<RegisterPage />} />
-    <Route path="/Home/" element={<HomePage user={user} />} />
+    <Route path="/Home/" element={<HomePage user={user} setUser={setUser} />} />
     <Route path="*" element={<NotFoundPage />} />
   </Routes>
 );

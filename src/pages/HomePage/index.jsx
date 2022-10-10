@@ -3,11 +3,12 @@ import logo from "../../img/Logo.png";
 import { HomePageStyled } from "./style";
 import { useNavigate } from "react-router-dom";
 
-const HomePage = ({ user }) => {
+const HomePage = ({ user, setUser }) => {
   const navigate = useNavigate();
 
   function logout() {
     localStorage.clear();
+    setUser([]);
     navigate("/");
   }
 
