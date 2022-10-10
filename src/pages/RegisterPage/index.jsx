@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useState } from "react";
+import api from "../../services/api";
+import { toast } from "react-toastify";
 
 const schema = yup.object({
   name: yup.string().required("⚠ Nome Obrigatório!"),
@@ -27,7 +29,7 @@ const schema = yup.object({
     .oneOf([yup.ref("password")], "⚠ A confirmação deve ser igual a senha!"),
   bio: yup.string().required("⚠ Bio obrigatória!"),
   contact: yup.string().required("⚠ Contato obrigatório!"),
-  module: yup.string().required("⚠ Módulo Obrigatório!"),
+  course_module: yup.string().required("⚠ Módulo Obrigatório!"),
 });
 
 const RegisterPage = () => {
@@ -44,7 +46,18 @@ const RegisterPage = () => {
   });
 
   function registerUser(data) {
-    console.log(data);
+    api
+      .post("/users", data)
+      .then((response) => {
+        console.log(response.data);
+        toast.success("Usuário criado com sucesso!");
+        navigate("/");
+      })
+      .catch((err) =>
+        err.response.data.message == "Email already exists"
+          ? toast.error("Email já cadastrado!")
+          : toast.error("Erro ao cadastrar!")
+      );
   }
 
   return (
@@ -136,14 +149,14 @@ const RegisterPage = () => {
         />
         <p className="error">{errors.contact?.message}</p>
 
-        <label htmlFor="module">Selecionar Módulo</label>
-        <select id="module" {...register("module")}>
+        <label htmlFor="course_module">Selecionar Módulo</label>
+        <select id="course_module" {...register("course_module")}>
           <option value="Primeiro Módulo">Primeiro Módulo</option>
           <option value="Segundo Módulo">Segundo Módulo</option>
           <option value="Terceiro Módulo">Terceiro Módulo</option>
           <option value="Quarto Módulo">Quarto Módulo</option>
         </select>
-        <p className="error">{errors.module?.message}</p>
+        <p className="error">{errors.course_module?.message}</p>
 
         <button type="submit">Cadastrar</button>
       </form>
