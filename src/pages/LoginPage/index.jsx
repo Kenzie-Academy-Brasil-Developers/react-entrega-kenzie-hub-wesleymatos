@@ -14,14 +14,7 @@ const schema = yup.object({
     .string()
     .email("⚠ Email inválido!")
     .required("⚠ Email obrigatório!"),
-  password: yup
-    .string()
-    .required("⚠ Senha obrigatória!")
-    .min(8, "⚠ Sua senha deve conter ao menos 8 caracteres!")
-    .matches(
-      "^(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-zA-z])",
-      "⚠ Sua senha deve conter ao menos, uma letra, um símbolo e um número!"
-    ),
+  password: yup.string().required("⚠ Senha obrigatória!"),
 });
 
 const LoginPage = ({ setUser }) => {
