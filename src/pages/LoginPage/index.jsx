@@ -3,18 +3,10 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { LoginPageStyled } from "./style";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { schema } from "../../validations/loginUser";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
-
-const schema = yup.object({
-  email: yup
-    .string()
-    .email("⚠ Email inválido!")
-    .required("⚠ Email obrigatório!"),
-  password: yup.string().required("⚠ Senha obrigatória!"),
-});
 
 const LoginPage = () => {
   const [viewPassword, setViewPassword] = useState("password");

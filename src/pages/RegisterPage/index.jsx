@@ -5,37 +5,16 @@ import { RegisterPageStyled } from "./style";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { useState } from "react";
-import api from "../../services/api";
-import { toast } from "react-toastify";
-
-const schema = yup.object({
-  name: yup.string().required("⚠ Nome Obrigatório!"),
-  email: yup
-    .string()
-    .email("⚠ Email inválido!")
-    .required("⚠ Email obrigatório!"),
-  password: yup
-    .string()
-    .required("⚠ Senha obrigatória!")
-    .min(8, "⚠ Sua senha deve conter ao menos 8 caracteres!")
-    .matches(
-      "^(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-zA-z])",
-      "⚠ Sua senha deve conter ao menos, uma letra, um símbolo e um número!"
-    ),
-  confirmPass: yup
-    .string()
-    .oneOf([yup.ref("password")], "⚠ A confirmação deve ser igual a senha!"),
-  bio: yup.string().required("⚠ Bio obrigatória!"),
-  contact: yup.string().required("⚠ Contato obrigatório!"),
-  course_module: yup.string().required("⚠ Módulo Obrigatório!"),
-});
+import { schema } from "../../validations/registerUser";
+import { useContext, useState } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
   const [viewPassword, setViewPassword] = useState("password");
   const [viewPasswordConf, setViewPasswordConf] = useState("password");
+
+  const { registerUser } = useContext(UserContext);
 
   const {
     register,
@@ -44,21 +23,6 @@ const RegisterPage = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-
-  function registerUser(data) {
-    api
-      .post("/users", data)
-      .then((response) => {
-        console.log(response.data);
-        toast.success("Usuário criado com sucesso!");
-        navigate("/");
-      })
-      .catch((err) =>
-        err.response.data.message == "Email already exists"
-          ? toast.error("Email já cadastrado!")
-          : toast.error("Erro ao cadastrar!")
-      );
-  }
 
   return (
     <RegisterPageStyled>

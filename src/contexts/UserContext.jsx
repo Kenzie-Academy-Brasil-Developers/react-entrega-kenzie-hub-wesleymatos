@@ -33,7 +33,6 @@ const UserProvider = ({ children }) => {
   }, []);
 
   async function loginUser(data) {
-    console.log(data);
     try {
       const response = await api.post("/sessions", data);
 
@@ -51,8 +50,23 @@ const UserProvider = ({ children }) => {
     }
   }
 
+  async function registerUser(data) {
+    try {
+      await api.post("/users", data);
+
+      toast.success("Usuário criado com sucesso!");
+      navigate("/");
+    } catch (error) {
+      error.response.data.message == "Email already exists"
+        ? toast.error("Email já cadastrado!")
+        : toast.error("Erro ao cadastrar!");
+    }
+  }
+
   return (
-    <UserContext.Provider value={{ loginUser, setUser, user, loading }}>
+    <UserContext.Provider
+      value={{ loginUser, setUser, user, loading, registerUser }}
+    >
       {children}
     </UserContext.Provider>
   );
