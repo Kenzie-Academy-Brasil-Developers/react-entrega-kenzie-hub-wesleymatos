@@ -122,17 +122,21 @@ export const LoginPageStyled = styled.main`
       width: 259.9px;
       height: 38.5px;
       background-color: var(--gray-1);
-      color: var(--gray-0);
       border: 1.2182px solid var(--gray-1);
       border-radius: 4px;
-      font-weight: 500;
-      font-size: 12.8347px;
-      line-height: 21px;
       margin-bottom: 10px;
 
       &:hover {
         border-color: var(--gray-2);
         background-color: var(--gray-2);
+      }
+
+      a {
+        color: var(--gray-0);
+        font-weight: 500;
+        font-size: 12.8347px;
+        line-height: 21px;
+        text-decoration: none;
       }
     }
   }

@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "../../validations/loginUser";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 
 const LoginPage = () => {
@@ -59,13 +59,8 @@ const LoginPage = () => {
         <p className="error">{errors.password?.message}</p>
         <button type="submit">Entrar</button>
         <p>Ainda não possui uma conta?</p>
-        <div
-          className="divButton"
-          onClick={() => {
-            navigate("/register");
-          }}
-        >
-          Cadastre-se
+        <div className="divButton">
+          <Link to="/register"> Cadastre-se </Link>
         </div>
       </form>
     </LoginPageStyled>
