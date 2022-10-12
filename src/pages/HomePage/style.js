@@ -48,7 +48,33 @@ export const HomePageStyled = styled.div`
   }
 
   main {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 26px;
+    padding: 0 4.0625%;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h3 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 18px;
+      }
+
+      span {
+        cursor: pointer;
+        border-radius: 4px;
+        padding: 0 8px;
+        font-size: 24px;
+        width: 32px;
+        height: 32px;
+        color: var(--gray-0);
+        background-color: var(--gray-3);
+      }
+    }
   }
 
   @media (min-width: 768px) {
@@ -62,7 +88,8 @@ export const HomePageStyled = styled.div`
       }
     }
 
-    header {
+    header,
+    main {
       padding: 0 10%;
     }
   }
@@ -95,23 +122,8 @@ export const HomePageStyled = styled.div`
     }
 
     main {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
       margin-top: 38px;
       padding: 0 16%;
-
-      h2 {
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 28px;
-      }
-
-      p {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-      }
     }
   }
 

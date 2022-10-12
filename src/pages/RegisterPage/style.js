@@ -175,7 +175,7 @@ export const RegisterPageStyled = styled.div`
       select {
         width: 329.93px;
         height: 48px;
-        padding: 0 16px;
+        padding: 0 15px;
         font-size: 16.2426px;
         line-height: 26px;
         margin-bottom: 22px;

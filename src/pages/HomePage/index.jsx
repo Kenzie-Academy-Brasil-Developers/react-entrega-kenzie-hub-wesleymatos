@@ -37,11 +37,10 @@ const HomePage = () => {
             <span>{user.course_module}</span>
           </header>
           <main>
-            <h2>Que pena! Estamos em desenvolvimento :(</h2>
-            <p>
-              Nossa aplicação está em desenvolvimento, em breve teremos
-              novidades...
-            </p>
+            <div>
+              <h3>Tecnologias</h3>
+              <span>+</span>
+            </div>
           </main>
         </HomePageStyled>
       ) : (

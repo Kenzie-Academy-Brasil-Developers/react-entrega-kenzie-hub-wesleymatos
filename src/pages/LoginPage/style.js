@@ -132,6 +132,10 @@ export const LoginPageStyled = styled.main`
       }
 
       a {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding-top: 3%;
         color: var(--gray-0);
         font-weight: 500;
         font-size: 12.8347px;
@@ -202,6 +206,10 @@ export const LoginPageStyled = styled.main`
         height: 48px;
         font-size: 16px;
         line-height: 26px;
+
+        a {
+          padding-top: 4%;
+        }
       }
     }
   }

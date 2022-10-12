@@ -115,10 +115,18 @@ const RegisterPage = () => {
 
         <label htmlFor="course_module">Selecionar Módulo</label>
         <select id="course_module" {...register("course_module")}>
-          <option value="Primeiro Módulo">Primeiro Módulo</option>
-          <option value="Segundo Módulo">Segundo Módulo</option>
-          <option value="Terceiro Módulo">Terceiro Módulo</option>
-          <option value="Quarto Módulo">Quarto Módulo</option>
+          <option value="1º Módulo (Introdução ao Frontend)">
+            1º Módulo (Introdução ao Frontend)
+          </option>
+          <option value="2º Módulo (Frontend avançado)">
+            2º Módulo (Frontend avançado)
+          </option>
+          <option value="3º Módulo (Introdução ao Backend)">
+            3º Módulo (Introdução ao Backend)
+          </option>
+          <option value="4º Módulo (Backend Avançado)">
+            4º Módulo (Backend Avançado)
+          </option>
         </select>
         <p className="error">{errors.course_module?.message}</p>
 
