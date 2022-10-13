@@ -5,6 +5,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import TechModal from "../../components/TechModal";
+import MainUl from "../../components/MainUl";
 
 const HomePage = () => {
   const { user, setUser, loading } = useContext(UserContext);
@@ -43,7 +44,7 @@ const HomePage = () => {
               <span className="plus">+</span>
             </div>
 
-            <TechModal />
+            <MainUl />
           </main>
         </HomePageStyled>
       ) : (
