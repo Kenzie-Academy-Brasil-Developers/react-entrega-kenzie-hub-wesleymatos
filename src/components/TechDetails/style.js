@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TechModalStyled = styled.div`
+export const TechDetailsStyled = styled.div`
   display: flex;
   flex-direction: column;
   width: 296px;
@@ -73,25 +73,47 @@ export const TechModalStyled = styled.div`
       border-radius: 3.20867px;
     }
 
-    button {
-      width: 260px;
+    .btnsModal {
+      background-color: inherit;
       height: 38px;
-      font-weight: 500;
-      font-size: 12.8347px;
-      line-height: 21px;
-      color: var(--gray-0);
-      background-color: var(--color-primary);
-      border: 1.2182px solid var(--color-primary);
-      border-radius: 4.06066px;
 
-      :hover {
-        background-color: var(--color-primary-focus);
-        border-color: var(--color-primary-focus);
+      button {
+        width: 163px;
+        height: 100%;
+        font-weight: 500;
+        font-size: 12.8347px;
+        line-height: 21px;
+        color: var(--gray-0);
+        background-color: var(--color-primary);
+        border: 1.2182px solid var(--color-primary);
+        border-radius: 4.06066px;
+
+        :hover {
+          background-color: var(--color-primary-focus);
+          border-color: var(--color-primary-focus);
+        }
+
+        :focus {
+          background-color: var(--color-primary-negative);
+          border-color: var(--color-primary-negative);
+        }
       }
 
-      :focus {
-        background-color: var(--color-primary-negative);
-        border-color: var(--color-primary-negative);
+      .delete {
+        color: var(--gray-0);
+        background-color: var(--gray-1);
+        height: 100%;
+        width: 78.35px;
+        font-weight: 500;
+        font-size: 12.7913px;
+        line-height: 21px;
+        border: 1.2182px solid var(--gray-1);
+        border-radius: 4.06066px;
+
+        :hover {
+          background-color: var(--gray-2);
+          border-color: var(--gray-2);
+        }
       }
     }
   }
@@ -128,11 +150,20 @@ export const TechModalStyled = styled.div`
         border-radius: 4px;
       }
 
-      button {
-        width: 324px;
-        height: 48px;
-        font-size: 16px;
-        line-height: 26px;
+      .btnsModal {
+        button {
+          width: 204px;
+          height: 48px;
+          font-size: 16px;
+          line-height: 26px;
+        }
+
+        .delete {
+          width: 98px;
+          height: 48px;
+          font-size: 16px;
+          line-height: 26px;
+        }
       }
     }
   }

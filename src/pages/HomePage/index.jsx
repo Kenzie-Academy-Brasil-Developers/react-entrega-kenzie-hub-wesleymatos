@@ -4,7 +4,6 @@ import { HomePageStyled } from "./style";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
-import TechModal from "../../components/TechModal";
 import MainUl from "../../components/MainUl";
 
 const HomePage = () => {
