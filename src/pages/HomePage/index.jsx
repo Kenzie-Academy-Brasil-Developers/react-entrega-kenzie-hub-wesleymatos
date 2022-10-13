@@ -4,6 +4,7 @@ import { HomePageStyled } from "./style";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
+import TechModal from "../../components/TechModal";
 
 const HomePage = () => {
   const { user, setUser, loading } = useContext(UserContext);
@@ -37,10 +38,12 @@ const HomePage = () => {
             <span>{user.course_module}</span>
           </header>
           <main>
-            <div>
+            <div className="addTech">
               <h3>Tecnologias</h3>
-              <span>+</span>
+              <span className="plus">+</span>
             </div>
+
+            <TechModal />
           </main>
         </HomePageStyled>
       ) : (

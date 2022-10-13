@@ -53,10 +53,11 @@ export const HomePageStyled = styled.div`
     margin-top: 26px;
     padding: 0 4.0625%;
 
-    div {
+    .addTech {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 20px;
 
       h3 {
         font-weight: 600;
@@ -64,7 +65,7 @@ export const HomePageStyled = styled.div`
         line-height: 18px;
       }
 
-      span {
+      .plus {
         cursor: pointer;
         border-radius: 4px;
         padding: 0 8px;
@@ -73,6 +74,10 @@ export const HomePageStyled = styled.div`
         height: 32px;
         color: var(--gray-0);
         background-color: var(--gray-3);
+
+        &:hover {
+          background-color: var(--gray-2);
+        }
       }
     }
   }
