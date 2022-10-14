@@ -19,7 +19,7 @@ const TechDetails = () => {
           </span>
         </div>
         <form>
-          <label htmlFor="techName">Nome do Projeto</label>
+          <label htmlFor="techName">Tecnologia</label>
           <input id="techName" placeholder="TypeScript" />
 
           <label htmlFor="techStatus">Selecionar Status</label>

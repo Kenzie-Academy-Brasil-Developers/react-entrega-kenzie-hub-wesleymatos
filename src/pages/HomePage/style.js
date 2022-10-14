@@ -81,6 +81,20 @@ export const HomePageStyled = styled.div`
         }
       }
     }
+
+    .outTech {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+      margin-bottom: 20px;
+
+      img {
+        height: 230px;
+        width: 230px;
+      }
+    }
   }
 
   @media (min-width: 768px) {
@@ -130,6 +144,23 @@ export const HomePageStyled = styled.div`
     main {
       margin-top: 38px;
       padding: 0 16%;
+
+      .outTech {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+
+        img {
+          height: 400px;
+          width: 400px;
+        }
+
+        p {
+          font-size: 20px;
+        }
+      }
     }
   }
 

@@ -1,5 +1,6 @@
 import ButtonNav from "../../components/ButtonNav";
 import logo from "../../img/Logo.png";
+import vetor from "../../img/Vetor.png";
 import { HomePageStyled } from "./style";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useContext } from "react";
@@ -22,6 +23,8 @@ const HomePage = () => {
   if (loading) {
     return <h3>Loading...</h3>;
   }
+
+  console.log(user);
 
   return (
     <>
@@ -52,7 +55,14 @@ const HomePage = () => {
                 +
               </span>
             </div>
-            <MainUl />
+            {user.techs.length ? (
+              <MainUl />
+            ) : (
+              <div className="outTech">
+                <img src={vetor} alt="Computador" />
+                <p>Nenhuma tecnologia foi encontrada... :(</p>
+              </div>
+            )}
           </main>
           {createTech && <TechModal />}
           {techDetails && <TechDetails />}
