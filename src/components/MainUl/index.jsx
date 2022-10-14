@@ -1,17 +1,17 @@
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import { StyledMainUl } from "./style";
 
 const MainUl = () => {
+  const { setTechDetails } = useContext(UserContext);
+
   return (
     <StyledMainUl>
-      <li>
-        <p>TypeScript</p>
-        <span>Iniciante</span>
-      </li>
-      <li>
-        <p>TypeScript</p>
-        <span>Iniciante</span>
-      </li>
-      <li>
+      <li
+        onClick={() => {
+          setTechDetails(true);
+        }}
+      >
         <p>TypeScript</p>
         <span>Iniciante</span>
       </li>

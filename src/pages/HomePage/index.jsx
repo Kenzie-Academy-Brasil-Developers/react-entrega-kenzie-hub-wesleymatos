@@ -5,9 +5,12 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import MainUl from "../../components/MainUl";
+import TechDetails from "../../components/TechDetails";
+import TechModal from "../../components/TechModal";
 
 const HomePage = () => {
-  const { user, setUser, loading } = useContext(UserContext);
+  const { user, setUser, loading, createTech, setCreateTech, techDetails } =
+    useContext(UserContext);
   const navigate = useNavigate();
 
   function logout() {
@@ -40,11 +43,19 @@ const HomePage = () => {
           <main>
             <div className="addTech">
               <h3>Tecnologias</h3>
-              <span className="plus">+</span>
+              <span
+                className="plus"
+                onClick={() => {
+                  setCreateTech(true);
+                }}
+              >
+                +
+              </span>
             </div>
-
             <MainUl />
           </main>
+          {createTech && <TechModal />}
+          {techDetails && <TechDetails />}
         </HomePageStyled>
       ) : (
         <Navigate to="/" replace />

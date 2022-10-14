@@ -9,6 +9,7 @@ export const HomePageStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: var(--gray-4);
     height: 73px;
     width: 100vw;
     border-bottom: 1px solid var(--gray-3);

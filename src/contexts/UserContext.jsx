@@ -9,6 +9,8 @@ const UserProvider = ({ children }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
+  const [createTech, setCreateTech] = useState(false);
+  const [techDetails, setTechDetails] = useState(false);
 
   useEffect(() => {
     async function loadUser() {
@@ -65,7 +67,17 @@ const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ loginUser, setUser, user, loading, registerUser }}
+      value={{
+        loginUser,
+        setUser,
+        user,
+        loading,
+        registerUser,
+        createTech,
+        setCreateTech,
+        techDetails,
+        setTechDetails,
+      }}
     >
       {children}
     </UserContext.Provider>
