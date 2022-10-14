@@ -7,7 +7,7 @@ import UserProvider from "./contexts/UserContext";
 const App = () => {
   return (
     <>
-      <ToastContainer />
+      <ToastContainer theme="dark" />
       <UserProvider>
         <Routes />
       </UserProvider>
