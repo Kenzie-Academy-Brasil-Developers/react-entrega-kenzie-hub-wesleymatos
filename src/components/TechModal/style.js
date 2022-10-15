@@ -47,7 +47,7 @@ export const TechModalStyled = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 235px;
+      min-height: 235px;
       width: 100%;
       background-color: var(--gray-3);
       box-shadow: 0px 3.20867px 32.0867px -8.02168px rgba(0, 0, 0, 0.25);
@@ -82,6 +82,16 @@ export const TechModalStyled = styled.div`
         border-radius: 3.20867px;
       }
 
+      .error {
+        text-align: center;
+        align-self: center;
+        color: var(--color-primary);
+        margin-bottom: 5px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+      }
+
       button {
         width: 260px;
         height: 38px;
@@ -108,7 +118,7 @@ export const TechModalStyled = styled.div`
   @media (min-width: 768px) {
     .container {
       width: 369px;
-      height: 342px;
+      min-height: 342px;
 
       div {
         height: 50px;
