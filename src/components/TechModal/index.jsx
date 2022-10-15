@@ -4,6 +4,8 @@ import { TechModalStyled } from "./style";
 import { schema } from "../../validations/modalTech";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import api from "../../services/api";
+import { toast } from "react-toastify";
 
 const TechModal = () => {
   const { setCreateTech } = useContext(UserContext);
@@ -16,8 +18,15 @@ const TechModal = () => {
     resolver: yupResolver(schema),
   });
 
-  function listTech(data) {
-    console.log(data);
+  async function addTech(data) {
+    try {
+      await api.post("/users/techs", data);
+      toast.success("Tecnologia criada com sucesso!");
+      setCreateTech(false);
+    } catch (error) {
+      console.error(error);
+      toast.error("Erro no registro!");
+    }
   }
 
   return (
@@ -33,16 +42,14 @@ const TechModal = () => {
             X
           </span>
         </div>
-        <form onSubmit={handleSubmit(listTech)}>
+        <form onSubmit={handleSubmit(addTech)}>
           <label htmlFor="techName">Tecnologia</label>
           <input
             id="techName"
             placeholder="Ex: TypeScript"
-            {...register("technologie")}
+            {...register("title")}
           />
-          {errors.technologie && (
-            <p className="error">{errors.technologie.message}</p>
-          )}
+          {errors.title && <p className="error">{errors.title.message}</p>}
 
           <label htmlFor="techStatus">Selecionar Status</label>
           <select id="techStatus" {...register("status")}>
