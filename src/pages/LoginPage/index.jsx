@@ -5,12 +5,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "../../validations/loginUser";
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 
 const LoginPage = () => {
   const [viewPassword, setViewPassword] = useState("password");
-  const navigate = useNavigate();
 
   const {
     register,
