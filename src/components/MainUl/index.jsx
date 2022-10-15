@@ -3,18 +3,21 @@ import { UserContext } from "../../contexts/UserContext";
 import { StyledMainUl } from "./style";
 
 const MainUl = () => {
-  const { setTechDetails } = useContext(UserContext);
+  const { setTechDetails, user } = useContext(UserContext);
 
   return (
     <StyledMainUl>
-      <li
-        onClick={() => {
-          setTechDetails(true);
-        }}
-      >
-        <p>TypeScript</p>
-        <span>Iniciante</span>
-      </li>
+      {user.techs?.map((technologies) => (
+        <li
+          key={technologies.id}
+          onClick={() => {
+            setTechDetails(true);
+          }}
+        >
+          <p>{technologies.title}</p>
+          <span>{technologies.status}</span>
+        </li>
+      ))}
     </StyledMainUl>
   );
 };

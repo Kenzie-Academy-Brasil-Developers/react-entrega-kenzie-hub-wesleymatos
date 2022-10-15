@@ -24,8 +24,6 @@ const HomePage = () => {
     return <h3>Loading...</h3>;
   }
 
-  console.log(user);
-
   return (
     <>
       {user ? (
