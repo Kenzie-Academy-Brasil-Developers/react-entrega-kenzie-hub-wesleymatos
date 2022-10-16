@@ -1,9 +1,15 @@
 import { useContext } from "react";
+import { TechContext } from "../../contexts/TechContext";
 import { UserContext } from "../../contexts/UserContext";
 import { TechDetailsStyled } from "./style";
 
 const TechDetails = () => {
   const { setTechDetails } = useContext(UserContext);
+  const { idLi } = useContext(TechContext);
+
+  function deleteTech() {
+    console.log(`deletando ${idLi}`);
+  }
 
   return (
     <TechDetailsStyled>
@@ -30,7 +36,13 @@ const TechDetails = () => {
           </select>
           <div className="btnsModal">
             <button type="submit">Salvar alterações</button>
-            <button className="delete" type="button">
+            <button
+              className="delete"
+              type="button"
+              onClick={() => {
+                deleteTech();
+              }}
+            >
               Excluir
             </button>
           </div>
