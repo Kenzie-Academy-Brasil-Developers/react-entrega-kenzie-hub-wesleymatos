@@ -5,7 +5,7 @@ import { StyledMainUl } from "./style";
 
 const MainUl = () => {
   const { setTechDetails, user } = useContext(UserContext);
-  const { setIdLi } = useContext(TechContext);
+  const { setIdLi, setNameTech } = useContext(TechContext);
 
   return (
     <StyledMainUl>
@@ -15,10 +15,11 @@ const MainUl = () => {
           key={technologies.id}
           onClick={(e) => {
             setTechDetails(true);
+            setNameTech(e.target.children[0].id);
             setIdLi(e.target.id);
           }}
         >
-          <p>{technologies.title}</p>
+          <p id={technologies.title}>{technologies.title}</p>
           <span>{technologies.status}</span>
         </li>
       ))}

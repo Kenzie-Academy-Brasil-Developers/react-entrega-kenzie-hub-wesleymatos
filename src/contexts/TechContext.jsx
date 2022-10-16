@@ -7,6 +7,7 @@ export const TechContext = createContext({});
 
 const TechProvider = ({ children }) => {
   const [idLi, setIdLi] = useState("");
+  const [nameTech, setNameTech] = useState("");
 
   const { setCreateTech, setTechDetails, changeLi, setChangeLi } =
     useContext(UserContext);
@@ -47,6 +48,8 @@ const TechProvider = ({ children }) => {
         setIdLi,
         deleteTech,
         addTech,
+        nameTech,
+        setNameTech,
       }}
     >
       {children}

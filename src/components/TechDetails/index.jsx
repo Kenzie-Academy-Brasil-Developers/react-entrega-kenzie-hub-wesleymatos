@@ -4,8 +4,8 @@ import { UserContext } from "../../contexts/UserContext";
 import { TechDetailsStyled } from "./style";
 
 const TechDetails = () => {
-  const { setTechDetails } = useContext(UserContext);
-  const { deleteTech } = useContext(TechContext);
+  const { setTechDetails, user } = useContext(UserContext);
+  const { deleteTech, liId, nameTech } = useContext(TechContext);
 
   return (
     <TechDetailsStyled>
@@ -22,7 +22,7 @@ const TechDetails = () => {
         </div>
         <form>
           <label htmlFor="techName">Tecnologia</label>
-          <input id="techName" disabled />
+          <input id="techName" disabled value={nameTech} />
 
           <label htmlFor="techStatus">Selecionar Status</label>
           <select id="techStatus">
