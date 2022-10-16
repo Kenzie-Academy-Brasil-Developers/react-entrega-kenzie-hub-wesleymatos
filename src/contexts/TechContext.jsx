@@ -8,13 +8,15 @@ export const TechContext = createContext({});
 const TechProvider = ({ children }) => {
   const [idLi, setIdLi] = useState("");
 
-  const { setCreateTech, setTechDetails } = useContext(UserContext);
+  const { setCreateTech, setTechDetails, changeLi, setChangeLi } =
+    useContext(UserContext);
 
   async function addTech(data) {
     try {
       await api.post("/users/techs", data);
       toast.success("Tecnologia criada com sucesso!");
       setCreateTech(false);
+      setChangeLi(!changeLi);
     } catch (error) {
       if (
         error.response.data.message ==
@@ -32,6 +34,7 @@ const TechProvider = ({ children }) => {
       await api.delete(`/users/techs/${idLi}`);
       toast.success("Tecnologia deletada com sucesso!");
       setTechDetails(false);
+      setChangeLi(!changeLi);
     } catch {
       toast.error("Erro ao deletar tecnologia!");
     }

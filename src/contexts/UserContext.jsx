@@ -11,6 +11,7 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [createTech, setCreateTech] = useState(false);
   const [techDetails, setTechDetails] = useState(false);
+  const [changeLi, setChangeLi] = useState(false);
 
   useEffect(() => {
     async function loadUser() {
@@ -32,7 +33,7 @@ const UserProvider = ({ children }) => {
     }
 
     loadUser();
-  }, []);
+  }, [changeLi]);
 
   async function loginUser(data) {
     try {
@@ -77,6 +78,8 @@ const UserProvider = ({ children }) => {
         setCreateTech,
         techDetails,
         setTechDetails,
+        changeLi,
+        setChangeLi,
       }}
     >
       {children}
