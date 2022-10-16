@@ -27,8 +27,14 @@ const TechProvider = ({ children }) => {
     }
   }
 
-  function deleteTech() {
+  async function deleteTech() {
     console.log(`deletando ${idLi}`);
+    try {
+      await api.delete(`/users/techs/${idLi}`);
+      toast.success("Tecnologia deletada com sucesso!");
+    } catch {
+      toast.error("Erro ao deletar tecnologia!");
+    }
   }
 
   return (
