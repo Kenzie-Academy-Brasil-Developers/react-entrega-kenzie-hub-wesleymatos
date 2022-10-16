@@ -4,8 +4,8 @@ import { UserContext } from "../../contexts/UserContext";
 import { TechDetailsStyled } from "./style";
 
 const TechDetails = () => {
-  const { setTechDetails, user } = useContext(UserContext);
-  const { deleteTech, liId, nameTech } = useContext(TechContext);
+  const { setTechDetails } = useContext(UserContext);
+  const { deleteTech, nameTech } = useContext(TechContext);
 
   return (
     <TechDetailsStyled>
