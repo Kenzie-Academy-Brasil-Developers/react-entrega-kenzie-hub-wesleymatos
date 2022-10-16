@@ -5,11 +5,7 @@ import { TechDetailsStyled } from "./style";
 
 const TechDetails = () => {
   const { setTechDetails } = useContext(UserContext);
-  const { idLi } = useContext(TechContext);
-
-  function deleteTech() {
-    console.log(`deletando ${idLi}`);
-  }
+  const { deleteTech } = useContext(TechContext);
 
   return (
     <TechDetailsStyled>

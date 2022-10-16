@@ -4,11 +4,11 @@ import { TechModalStyled } from "./style";
 import { schema } from "../../validations/modalTech";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import api from "../../services/api";
-import { toast } from "react-toastify";
+import { TechContext } from "../../contexts/TechContext";
 
 const TechModal = () => {
   const { setCreateTech } = useContext(UserContext);
+  const { addTech } = useContext(TechContext);
 
   const {
     register,
@@ -17,17 +17,6 @@ const TechModal = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-
-  async function addTech(data) {
-    try {
-      await api.post("/users/techs", data);
-      toast.success("Tecnologia criada com sucesso!");
-      setCreateTech(false);
-    } catch (error) {
-      console.error(error);
-      toast.error("Erro no registro!");
-    }
-  }
 
   return (
     <TechModalStyled>
