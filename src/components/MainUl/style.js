@@ -9,6 +9,7 @@ export const StyledMainUl = styled.ul`
   border-radius: 4px;
   padding: 23px 0;
   gap: 15px;
+  margin-bottom: 20px;
 
   li {
     cursor: pointer;
