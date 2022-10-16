@@ -22,7 +22,7 @@ const TechDetails = () => {
         </div>
         <form>
           <label htmlFor="techName">Tecnologia</label>
-          <input id="techName" placeholder="TypeScript" />
+          <input id="techName" disabled />
 
           <label htmlFor="techStatus">Selecionar Status</label>
           <select id="techStatus">

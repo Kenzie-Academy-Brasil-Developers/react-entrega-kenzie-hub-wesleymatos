@@ -28,7 +28,6 @@ const TechProvider = ({ children }) => {
   }
 
   async function deleteTech() {
-    console.log(`deletando ${idLi}`);
     try {
       await api.delete(`/users/techs/${idLi}`);
       toast.success("Tecnologia deletada com sucesso!");
@@ -39,7 +38,14 @@ const TechProvider = ({ children }) => {
   }
 
   return (
-    <TechContext.Provider value={{ idLi, setIdLi, deleteTech, addTech }}>
+    <TechContext.Provider
+      value={{
+        idLi,
+        setIdLi,
+        deleteTech,
+        addTech,
+      }}
+    >
       {children}
     </TechContext.Provider>
   );
