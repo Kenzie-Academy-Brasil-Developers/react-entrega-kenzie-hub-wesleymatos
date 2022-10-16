@@ -2,10 +2,17 @@ import { useContext } from "react";
 import { TechContext } from "../../contexts/TechContext";
 import { UserContext } from "../../contexts/UserContext";
 import { TechDetailsStyled } from "./style";
+import { schema } from "../../validations/modalDetails";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const TechDetails = () => {
   const { setTechDetails } = useContext(UserContext);
-  const { deleteTech, nameTech } = useContext(TechContext);
+  const { deleteTech, nameTech, updateTech } = useContext(TechContext);
+
+  const { register, handleSubmit } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   return (
     <TechDetailsStyled>
@@ -20,12 +27,12 @@ const TechDetails = () => {
             X
           </span>
         </div>
-        <form>
+        <form onSubmit={handleSubmit(updateTech)}>
           <label htmlFor="techName">Tecnologia</label>
           <input id="techName" disabled value={nameTech} />
 
           <label htmlFor="techStatus">Selecione o Status atual</label>
-          <select id="techStatus">
+          <select id="techStatus" {...register("status")}>
             <option value="Iniciante">Iniciante</option>
             <option value="Intermediário">Intermediário</option>
             <option value="Avançado">Avançado</option>

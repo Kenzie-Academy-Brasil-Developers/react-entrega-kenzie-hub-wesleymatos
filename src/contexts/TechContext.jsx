@@ -41,6 +41,19 @@ const TechProvider = ({ children }) => {
     }
   }
 
+  async function updateTech(data) {
+    console.log(data);
+
+    try {
+      await api.put(`/users/techs/${idLi}`, data);
+      toast.success("Tecnologia editada com sucesso!");
+      setTechDetails(false);
+      setChangeLi(!changeLi);
+    } catch {
+      toast.error("Erro ao editar a tecnologia!");
+    }
+  }
+
   return (
     <TechContext.Provider
       value={{
@@ -50,6 +63,7 @@ const TechProvider = ({ children }) => {
         addTech,
         nameTech,
         setNameTech,
+        updateTech,
       }}
     >
       {children}
