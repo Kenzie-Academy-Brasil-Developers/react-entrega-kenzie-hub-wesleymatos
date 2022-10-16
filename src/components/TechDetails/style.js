@@ -64,10 +64,6 @@ export const TechDetailsStyled = styled.div`
         color: var(--gray-0);
       }
 
-      input {
-        color: var(--gray-0);
-      }
-
       select {
         color: var(--gray-1);
       }
@@ -80,6 +76,11 @@ export const TechDetailsStyled = styled.div`
         background-color: var(--gray-3);
         border: 0.9772px solid var(--gray-1);
         border-radius: 3.20867px;
+      }
+
+      input {
+        color: var(--color-primary-negative);
+        border-color: var(--color-primary-negative);
       }
 
       .btnsModal {

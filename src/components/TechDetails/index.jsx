@@ -24,7 +24,7 @@ const TechDetails = () => {
           <label htmlFor="techName">Tecnologia</label>
           <input id="techName" disabled value={nameTech} />
 
-          <label htmlFor="techStatus">Selecionar Status</label>
+          <label htmlFor="techStatus">Selecione o Status atual</label>
           <select id="techStatus">
             <option value="Iniciante">Iniciante</option>
             <option value="Intermediário">Intermediário</option>
