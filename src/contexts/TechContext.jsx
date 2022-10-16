@@ -8,7 +8,7 @@ export const TechContext = createContext({});
 const TechProvider = ({ children }) => {
   const [idLi, setIdLi] = useState("");
 
-  const { setCreateTech } = useContext(UserContext);
+  const { setCreateTech, setTechDetails } = useContext(UserContext);
 
   async function addTech(data) {
     try {
@@ -32,6 +32,7 @@ const TechProvider = ({ children }) => {
     try {
       await api.delete(`/users/techs/${idLi}`);
       toast.success("Tecnologia deletada com sucesso!");
+      setTechDetails(false);
     } catch {
       toast.error("Erro ao deletar tecnologia!");
     }
