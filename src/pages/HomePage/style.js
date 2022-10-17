@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const trackProgress = keyframes`
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+  `;
 
 export const HomePageStyled = styled.div`
   display: flex;
@@ -89,6 +98,7 @@ export const HomePageStyled = styled.div`
       align-items: center;
       width: 300px;
       margin-bottom: 20px;
+      animation: ${trackProgress} 1s linear;
 
       img {
         height: 230px;

@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const trackProgress = keyframes`
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+  `;
 
 export const TechDetailsStyled = styled.div`
   display: flex;
@@ -13,6 +22,7 @@ export const TechDetailsStyled = styled.div`
     display: flex;
     flex-direction: column;
     width: 296px;
+    animation: ${trackProgress} 0.3s ease-in;
 
     div {
       display: flex;

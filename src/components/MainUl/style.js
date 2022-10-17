@@ -1,4 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const entering = keyframes`
+  0% {
+    color: transparent;
+    transform: translateX(-30px);
+    filter: opacity(0);
+  }
+  100% {
+    transform: translateX(0px);
+    filter: opacity(1);
+  }
+  `;
 
 export const StyledMainUl = styled.ul`
   display: flex;
@@ -22,6 +34,8 @@ export const StyledMainUl = styled.ul`
     height: 48.73px;
     border-radius: 4px;
     padding: 0 12px;
+    animation: ${entering} linear 1s;
+    transition: 0.3s;
 
     &:hover {
       background-color: var(--gray-1);

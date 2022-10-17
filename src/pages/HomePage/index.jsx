@@ -8,6 +8,7 @@ import { UserContext } from "../../contexts/UserContext";
 import MainUl from "../../components/MainUl";
 import TechDetails from "../../components/TechDetails";
 import TechModal from "../../components/TechModal";
+import Loading from "../../components/Loading";
 
 const HomePage = () => {
   const { user, setUser, loading, createTech, setCreateTech, techDetails } =
@@ -21,7 +22,7 @@ const HomePage = () => {
   }
 
   if (loading) {
-    return <h3>Loading...</h3>;
+    return <Loading />;
   }
 
   return (
