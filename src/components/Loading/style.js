@@ -18,11 +18,9 @@ const ring = keyframes`
   `;
 
 const text = keyframes`
-
-50%{
-  color: var(--background);
-}
-
+  50%{
+    color: var(--background);
+  }
 `;
 
 export const LoadingStyled = styled.div`
