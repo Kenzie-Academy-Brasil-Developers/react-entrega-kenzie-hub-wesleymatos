@@ -6,8 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "../../validations/registerUser";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
+import api from "../../services/api";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -23,6 +24,22 @@ const RegisterPage = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  useEffect(() => {
+    const token = localStorage.getItem("@kenzie-hub:token");
+
+    async function isUserLogged() {
+      if (token) {
+        try {
+          await api.get("/profile");
+          token && navigate("/home", { replace: true });
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    }
+    isUserLogged();
+  }, []);
 
   return (
     <RegisterPageStyled>

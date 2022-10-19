@@ -4,12 +4,30 @@ import { LoginPageStyled } from "./style";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "../../validations/loginUser";
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
+import api from "../../services/api";
 
 const LoginPage = () => {
   const [viewPassword, setViewPassword] = useState("password");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("@kenzie-hub:token");
+
+    async function isUserLogged() {
+      if (token) {
+        try {
+          await api.get("/profile");
+          token && navigate("/home", { replace: true });
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    }
+    isUserLogged();
+  }, []);
 
   const {
     register,
