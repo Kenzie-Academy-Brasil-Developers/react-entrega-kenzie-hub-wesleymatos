@@ -42,7 +42,7 @@ export default createGlobalStyle`
     font-family: 'Inter', sans-serif;
   }
 
-  p, span, label, ::placeholder{
+  a, p, span, label, ::placeholder{
     font: var(--headline);
     color: var(--gray-1);
     font-family: 'Inter', sans-serif;
