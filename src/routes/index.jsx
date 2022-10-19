@@ -4,7 +4,7 @@ import RegisterPage from "../pages/RegisterPage";
 import HomePage from "../pages/HomePage";
 import NotFoundPage from "../pages/NotFoundPage";
 
-const RoutMain = ({ setUser, user }) => (
+const RoutMain = () => (
   <Routes>
     <Route path="/" element={<LoginPage />} />
     <Route path="/Register/" element={<RegisterPage />} />
