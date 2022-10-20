@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
 import { ButtonNavStyled } from "./style";
 
-interface IButtonNav {
+interface IButtonNavProps {
   content: ReactNode;
   onClick: () => void;
 }
 
-const ButtonNav = ({ content, onClick }: IButtonNav) => (
+const ButtonNav = ({ content, onClick }: IButtonNavProps) => (
   <ButtonNavStyled type="button" onClick={onClick}>
     {content}
   </ButtonNavStyled>
