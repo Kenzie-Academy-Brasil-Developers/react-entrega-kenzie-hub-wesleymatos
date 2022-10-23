@@ -5,6 +5,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTechContext } from "../../contexts/TechContext";
 
+interface ITech {
+  title: string;
+  status: string;
+}
+
 const TechModal = () => {
   const { setCreateTech } = useUserContext();
   const { addTech } = useTechContext();
@@ -13,7 +18,7 @@ const TechModal = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<ITech>({
     resolver: yupResolver(schema),
   });
 

@@ -6,11 +6,15 @@ import { schema } from "../../validations/modalDetails";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+interface ITech {
+  status: string;
+}
+
 const TechDetails = () => {
   const { setTechDetails } = useUserContext();
   const { deleteTech, nameTech, updateTech } = useContext(TechContext);
 
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit } = useForm<ITech>({
     resolver: yupResolver(schema),
   });
 
