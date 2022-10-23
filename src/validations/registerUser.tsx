@@ -11,7 +11,7 @@ export const schema = yup.object({
     .required("⚠ Senha obrigatória!")
     .min(8, "⚠ Sua senha deve conter ao menos 8 caracteres!")
     .matches(
-      "^(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-zA-z])",
+      /^(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-zA-z])/,
       "⚠ Sua senha deve conter ao menos, uma letra, um símbolo e um número!"
     ),
   confirmPass: yup
