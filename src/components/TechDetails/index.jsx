@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { TechContext } from "../../contexts/TechContext";
-import { UserContext } from "../../contexts/UserContext";
+import { useUserContext } from "../../contexts/UserContext";
 import { TechDetailsStyled } from "./style";
 import { schema } from "../../validations/modalDetails";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const TechDetails = () => {
-  const { setTechDetails } = useContext(UserContext);
+  const { setTechDetails } = useUserContext();
   const { deleteTech, nameTech, updateTech } = useContext(TechContext);
 
   const { register, handleSubmit } = useForm({

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { UserContext } from "../../contexts/UserContext";
+import { useUserContext } from "../../contexts/UserContext";
 import { TechModalStyled } from "./style";
 import { schema } from "../../validations/modalTech";
 import { useForm } from "react-hook-form";
@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { TechContext } from "../../contexts/TechContext";
 
 const TechModal = () => {
-  const { setCreateTech } = useContext(UserContext);
+  const { setCreateTech } = useUserContext();
   const { addTech } = useContext(TechContext);
 
   const {

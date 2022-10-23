@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { TechContext } from "../../contexts/TechContext";
-import { UserContext } from "../../contexts/UserContext";
+import { useUserContext } from "../../contexts/UserContext";
 import { StyledMainUl } from "./style";
 
 const MainUl = () => {
-  const { setTechDetails, user } = useContext(UserContext);
+  const { setTechDetails, user } = useUserContext();
   const { setIdLi, setNameTech } = useContext(TechContext);
 
   return (

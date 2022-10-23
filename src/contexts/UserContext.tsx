@@ -1,16 +1,22 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import api from "../services/api";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { AxiosError } from "axios";
 
-export const UserContext = createContext({});
+const UserContext = createContext<IUserContext>({} as IUserContext);
 
 interface IUserProviderProps {
   children: ReactNode;
 }
 
-interface IApiError {
+export interface IApiError {
   message: string;
 }
 
@@ -59,21 +65,21 @@ interface IResponseLogin {
   data: IResponseDataLogin;
 }
 
-// interface IUserContext {
-//   loginUser: Promise<void>;
-//   setUser: React.Dispatch<React.SetStateAction<IUser | null>>;
-//   user: IUser | null;
-//   loading: boolean;
-//   registerUser: Promise<void>;
-//   createTech: boolean;
-//   setCreateTech: React.Dispatch<React.SetStateAction<boolean>>;
-//   techDetails: boolean;
-//   setTechDetails: React.Dispatch<React.SetStateAction<boolean>>;
-//   changeLi: boolean;
-//   setChangeLi: React.Dispatch<React.SetStateAction<boolean>>;
-// }
+interface IUserContext {
+  loginUser: (data: ILoginUser) => Promise<void>;
+  setUser: React.Dispatch<React.SetStateAction<IUser | null>>;
+  user: IUser | null;
+  loading: boolean;
+  registerUser: (data: IRegisterUser) => Promise<void>;
+  createTech: boolean;
+  setCreateTech: React.Dispatch<React.SetStateAction<boolean>>;
+  techDetails: boolean;
+  setTechDetails: React.Dispatch<React.SetStateAction<boolean>>;
+  changeLi: boolean;
+  setChangeLi: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const UserProvider = ({ children }: IUserProviderProps) => {
+export const UserProvider = ({ children }: IUserProviderProps) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<IUser | null>(null);
@@ -128,7 +134,7 @@ const UserProvider = ({ children }: IUserProviderProps) => {
       navigate("/");
     } catch (error) {
       const requestError = error as AxiosError<IApiError>;
-      requestError.response?.data.message == "Email already exists"
+      requestError.response?.data.message === "Email already exists"
         ? toast.error("Email já cadastrado!")
         : toast.error("Erro ao cadastrar!");
     }
@@ -155,4 +161,8 @@ const UserProvider = ({ children }: IUserProviderProps) => {
   );
 };
 
-export default UserProvider;
+export function useUserContext(): IUserContext {
+  const context = useContext(UserContext);
+
+  return context;
+}

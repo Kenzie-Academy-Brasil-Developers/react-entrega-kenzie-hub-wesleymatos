@@ -1,26 +1,50 @@
-import { createContext, useContext, useState } from "react";
-import { UserContext } from "./UserContext";
+import { createContext, ReactNode, useContext, useState } from "react";
+import { IApiError, useUserContext } from "./UserContext";
 import api from "../services/api";
 import { toast } from "react-toastify";
+import { AxiosError } from "axios";
 
-export const TechContext = createContext({});
+export const TechContext = createContext<ITechContext>({} as ITechContext);
 
-const TechProvider = ({ children }) => {
+interface ITechProviderProps {
+  children: ReactNode;
+}
+
+interface IAddTechData {
+  title: string;
+  status: string;
+}
+
+type IUpdateTechData = Omit<IAddTechData, "title">;
+
+interface ITechContext {
+  idLi: string;
+  setIdLi: React.Dispatch<React.SetStateAction<string>>;
+  deleteTech: () => Promise<void>;
+  addTech: (data: IAddTechData) => Promise<void>;
+  nameTech: string;
+  setNameTech: React.Dispatch<React.SetStateAction<string>>;
+  updateTech: (data: IUpdateTechData) => Promise<void>;
+}
+
+export const TechProvider = ({ children }: ITechProviderProps) => {
   const [idLi, setIdLi] = useState("");
   const [nameTech, setNameTech] = useState("");
 
   const { setCreateTech, setTechDetails, changeLi, setChangeLi } =
-    useContext(UserContext);
+    useUserContext();
 
-  async function addTech(data) {
+  async function addTech(data: IAddTechData) {
     try {
       await api.post("/users/techs", data);
       toast.success("Tecnologia criada com sucesso!");
       setCreateTech(false);
       setChangeLi(!changeLi);
     } catch (error) {
+      const requestError = error as AxiosError<IApiError>;
+
       if (
-        error.response.data.message ==
+        requestError.response?.data.message ===
         "User Already have this technology created you can only update it"
       ) {
         toast.error("Esta tecnologia já foi criada, você só pode atualizá-la.");
@@ -41,9 +65,7 @@ const TechProvider = ({ children }) => {
     }
   }
 
-  async function updateTech(data) {
-    console.log(data);
-
+  async function updateTech(data: IUpdateTechData) {
     try {
       await api.put(`/users/techs/${idLi}`, data);
       toast.success("Tecnologia editada com sucesso!");
@@ -71,4 +93,8 @@ const TechProvider = ({ children }) => {
   );
 };
 
-export default TechProvider;
+export function useTechContext(): ITechContext {
+  const context = useContext(TechContext);
+
+  return context;
+}

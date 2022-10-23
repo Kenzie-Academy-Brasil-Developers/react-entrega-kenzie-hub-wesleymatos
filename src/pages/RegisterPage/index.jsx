@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "../../validations/registerUser";
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../contexts/UserContext";
+import { useEffect, useState } from "react";
+import { useUserContext } from "../../contexts/UserContext";
 import api from "../../services/api";
 
 const RegisterPage = () => {
@@ -15,7 +15,7 @@ const RegisterPage = () => {
   const [viewPassword, setViewPassword] = useState("password");
   const [viewPasswordConf, setViewPasswordConf] = useState("password");
 
-  const { registerUser } = useContext(UserContext);
+  const { registerUser } = useUserContext();
 
   const {
     register,

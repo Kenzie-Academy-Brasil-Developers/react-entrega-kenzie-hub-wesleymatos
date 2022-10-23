@@ -4,9 +4,9 @@ import { LoginPageStyled } from "./style";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "../../validations/loginUser";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { UserContext } from "../../contexts/UserContext";
+import { useUserContext } from "../../contexts/UserContext";
 import api from "../../services/api";
 
 const LoginPage = () => {
@@ -37,7 +37,7 @@ const LoginPage = () => {
     resolver: yupResolver(schema),
   });
 
-  const { loginUser } = useContext(UserContext);
+  const { loginUser } = useUserContext();
 
   return (
     <LoginPageStyled>
