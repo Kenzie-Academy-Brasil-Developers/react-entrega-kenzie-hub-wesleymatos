@@ -10,6 +10,16 @@ import { useEffect, useState } from "react";
 import { useUserContext } from "../../contexts/UserContext";
 import api from "../../services/api";
 
+interface IUserRegister {
+  name: string;
+  email: string;
+  password: string;
+  confirmPass: string;
+  bio: string;
+  contact: string;
+  course_module: string;
+}
+
 const RegisterPage = () => {
   const navigate = useNavigate();
   const [viewPassword, setViewPassword] = useState("password");
@@ -21,7 +31,7 @@ const RegisterPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<IUserRegister>({
     resolver: yupResolver(schema),
   });
 
@@ -39,7 +49,7 @@ const RegisterPage = () => {
       }
     }
     isUserLogged();
-  }, []);
+  });
 
   return (
     <RegisterPageStyled>
@@ -79,12 +89,12 @@ const RegisterPage = () => {
           <span
             className="icon"
             onClick={() => {
-              viewPassword == "password"
+              viewPassword === "password"
                 ? setViewPassword("text")
                 : setViewPassword("password");
             }}
           >
-            {viewPassword == "password" ? (
+            {viewPassword === "password" ? (
               <AiOutlineEye />
             ) : (
               <AiOutlineEyeInvisible />
@@ -104,12 +114,12 @@ const RegisterPage = () => {
           <span
             className="iconConfirm"
             onClick={() => {
-              viewPasswordConf == "password"
+              viewPasswordConf === "password"
                 ? setViewPasswordConf("text")
                 : setViewPasswordConf("password");
             }}
           >
-            {viewPasswordConf == "password" ? (
+            {viewPasswordConf === "password" ? (
               <AiOutlineEye />
             ) : (
               <AiOutlineEyeInvisible />

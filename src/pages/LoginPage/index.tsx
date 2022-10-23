@@ -9,6 +9,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useUserContext } from "../../contexts/UserContext";
 import api from "../../services/api";
 
+interface IUserLogin {
+  email: string;
+  password: string;
+}
+
 const LoginPage = () => {
   const [viewPassword, setViewPassword] = useState("password");
   const navigate = useNavigate();
@@ -27,13 +32,13 @@ const LoginPage = () => {
       }
     }
     isUserLogged();
-  }, []);
+  });
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<IUserLogin>({
     resolver: yupResolver(schema),
   });
 
@@ -61,12 +66,12 @@ const LoginPage = () => {
           />
           <span
             onClick={() => {
-              viewPassword == "password"
+              viewPassword === "password"
                 ? setViewPassword("text")
                 : setViewPassword("password");
             }}
           >
-            {viewPassword == "password" ? (
+            {viewPassword === "password" ? (
               <AiOutlineEye />
             ) : (
               <AiOutlineEyeInvisible />
