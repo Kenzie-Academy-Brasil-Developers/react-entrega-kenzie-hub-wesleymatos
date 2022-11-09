@@ -52,7 +52,7 @@ A Pro Support Technology plataforma com o objetivo de gerenciar dúvidas/impedim
 ## Linguagens utilizadas
 
 <div> <a href="https://pt-br.reactjs.org/"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc2Y2gmQB5zuaBd1AfN_AyEgoTgxPF65i7GwlvrbnnP_RUlubieG19WFnonCtS4ZfAox4&usqp=CAU" alt="React" width="40" height="40"/></a>
-<a href="https://www.typescriptlang.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" alt="TypeScript" width="40" height="40"/></a> <a href="https://www.typescriptlang.org/"><img src="https://miro.medium.com/max/1400/1*FgWMPNlUpjYKhSe7SbOSFQ.png" alt="React-Hook-Form" width="40" height="40"/> <img src="" alt="React" width="40" height="40"/></a>  </div>
+<a href="https://www.typescriptlang.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" alt="TypeScript" width="40" height="40"/></a> <a href="https://react-hook-form.com/"><img src="https://avatars.githubusercontent.com/u/53986236?s=280&v=4" alt="React-Hook-Form" width="40" height="40"/></a> <a href="https://styled-components.com/"><img src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.png" alt="Styled-components" width="40" height="40"/></a>  </div>
 
 ###
 
