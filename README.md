@@ -17,9 +17,7 @@
 
 - [Linguagens utilizadas](#linguagens-utilizadas)
 
-- [Acesso ao projeto](#acesso-ao-projeto)
-
-- [Abrir e rodar o projeto](#abrir-e-rodar-o-projeto)
+- [Links](#Links)
 
 - [Desenvolvedores](#desenvolvedores)
 
@@ -49,8 +47,16 @@ A Pro Support Technology plataforma com o objetivo de gerenciar dúvidas/impedim
 
 :heavy_check_mark: Deletar perguntas dos DEVS e editar suas respostas nas mesmas.
 
+###
 
 ## Linguagens utilizadas
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc2Y2gmQB5zuaBd1AfN_AyEgoTgxPF65i7GwlvrbnnP_RUlubieG19WFnonCtS4ZfAox4&usqp=CAU" alt="React" width="40" height="40"/> 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" alt="TypeScript" width="40" height="40"/> 
+
+###
+
+## Links
+
+`Documentação da API:` https://pro-support-doc.vercel.app/
+`Figma:` https://www.figma.com/file/HquYEco8GJCOOfnSe1uQQ7/Projeto-front-end?node-id=0%3A1
