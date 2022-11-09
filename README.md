@@ -51,8 +51,8 @@ A Pro Support Technology plataforma com o objetivo de gerenciar dúvidas/impedim
 
 ## Linguagens utilizadas
 
-<div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc2Y2gmQB5zuaBd1AfN_AyEgoTgxPF65i7GwlvrbnnP_RUlubieG19WFnonCtS4ZfAox4&usqp=CAU" alt="React" width="40" height="40"/> 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" alt="TypeScript" width="40" height="40"/>  </div>
+<div> <a href="https://pt-br.reactjs.org/"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc2Y2gmQB5zuaBd1AfN_AyEgoTgxPF65i7GwlvrbnnP_RUlubieG19WFnonCtS4ZfAox4&usqp=CAU" alt="React" width="40" height="40"/></a>
+<a href="https://www.typescriptlang.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" alt="TypeScript" width="40" height="40"/></a> <a href="https://www.typescriptlang.org/"><img src="https://miro.medium.com/max/1400/1*FgWMPNlUpjYKhSe7SbOSFQ.png" alt="React-Hook-Form" width="40" height="40"/> <img src="" alt="React" width="40" height="40"/></a>  </div>
 
 ###
 
@@ -60,7 +60,7 @@ A Pro Support Technology plataforma com o objetivo de gerenciar dúvidas/impedim
 
 `Documentação da API:` https://pro-support-doc.vercel.app/   
 
-`Documentação da API:` https://www.figma.com/file/HquYEco8GJCOOfnSe1uQQ7/Projeto-front-end?node-id=0%3A1
+`Figma:` https://www.figma.com/file/HquYEco8GJCOOfnSe1uQQ7/Projeto-front-end?node-id=0%3A1
 <hr>
 
 ## Desenvolvedores
