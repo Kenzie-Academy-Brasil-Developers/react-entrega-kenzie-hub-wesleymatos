@@ -65,6 +65,8 @@ A Pro Support Technology plataforma com o objetivo de gerenciar dúvidas/impedim
 ## Desenvolvedores
 
 | [<img src="https://avatars.githubusercontent.com/u/104766684?v=4" width=115><br><sub>Wesley Matos</sub>](https://github.com/wesleydematos) |  [<img src="https://avatars.githubusercontent.com/u/106447484?v=4" width=115><br><sub>Victoria Milan</sub>](https://github.com/victoriamilans)  |
-| :---: | :---: | [<img src="https://avatars.githubusercontent.com/u/106597024?v=4" width=115><br><sub>Henrique Jesus</sub>](https://github.com/henriquejesus128) |  [<img src="https://avatars.githubusercontent.com/u/106627534?v=4" width=115><br><sub>Bianca Vellego</sub>](https://github.com/biancavellego)  |
+| :---: | :---: 
+<hr/>
+[<img src="https://avatars.githubusercontent.com/u/106597024?v=4" width=115><br><sub>Henrique Jesus</sub>](https://github.com/henriquejesus128) |  [<img src="https://avatars.githubusercontent.com/u/106627534?v=4" width=115><br><sub>Bianca Vellego</sub>](https://github.com/biancavellego)  |
 | :---: | :---: 
 
