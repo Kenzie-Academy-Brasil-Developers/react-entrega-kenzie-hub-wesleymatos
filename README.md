@@ -15,9 +15,7 @@
 
 - [Funcionalidades](#funcionalidades)
 
-- [Aplicação](#aplicação)
-
-- [Ferramentas utilizadas](#ferramentas-utilizadas)
+- [Linguagens utilizadas](#linguagens-utilizadas)
 
 - [Acesso ao projeto](#acesso-ao-projeto)
 
@@ -50,3 +48,9 @@ A Pro Support Technology plataforma com o objetivo de gerenciar dúvidas/impedim
 :heavy_check_mark: Vizualizar e responder todas as perguntas feitas pelos DEVS.
 
 :heavy_check_mark: Deletar perguntas dos DEVS e editar suas respostas nas mesmas.
+
+
+## Linguagens utilizadas
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc2Y2gmQB5zuaBd1AfN_AyEgoTgxPF65i7GwlvrbnnP_RUlubieG19WFnonCtS4ZfAox4&usqp=CAU" alt="React" width="40" height="40"/> 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" alt="TypeScript" width="40" height="40"/> 
