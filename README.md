@@ -63,8 +63,7 @@ A Pro Support Technology plataforma com o objetivo de gerenciar dúvidas/impedim
 `Documentação da API:` https://www.figma.com/file/HquYEco8GJCOOfnSe1uQQ7/Projeto-front-end?node-id=0%3A1
 
 ## Desenvolvedores
+
 | [<img src="https://avatars.githubusercontent.com/u/104766684?v=4" width=115><br><sub>Wesley Matos</sub>](https://github.com/wesleydematos) |  [<img src="https://avatars.githubusercontent.com/u/106447484?v=4" width=115><br><sub>Victoria Milan</sub>](https://github.com/victoriamilans)  |
-[<img src="https://avatars.githubusercontent.com/u/106597024?v=4" width=115><br><sub>Henrique Jesus</sub>](https://github.com/henriquejesus128) |  [<img src="https://avatars.githubusercontent.com/u/106627534?v=4" width=115><br><sub>Bianca Vellego</sub>](https://github.com/biancavellego)  
-| [<img src="https://avatars.githubusercontent.com/u/106770677?v=4" width=115><br><sub>Thomas Schreiner</sub>](https://github.com/ThomSchreiner) |  [<img src="https://avatars.githubusercontent.com/u/106772940?v=4" width=115><br><sub>Altieris Souza</sub>](https://github.com/Altieris-Souza)  |
-| :---: | :---: | :---: | :---: | :---: | :---: 
+| :---: | :---: 
 
