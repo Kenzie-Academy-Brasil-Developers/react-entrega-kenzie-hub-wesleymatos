@@ -40,12 +40,12 @@ A Pro Support Technology plataforma com o objetivo de gerenciar dúvidas/impedim
 
 :heavy_check_mark: Editar as informações de seu perfil e deletar sua conta.
 
-
 `Funcionalidades User Admin (Supervisores):` 
 <hr>
 :heavy_check_mark: Vizualizar e responder todas as perguntas feitas pelos DEVS.
 
 :heavy_check_mark: Deletar perguntas dos DEVS e editar suas respostas nas mesmas.
+
 
 ###
 
